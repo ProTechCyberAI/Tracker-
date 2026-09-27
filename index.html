@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Tech</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #030303;
+            color: aliceblue;
+            text-align: center;
+            padding: 68px 20px;
+        }
+
+        .card {
+            max-width: 400px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 20px;
+            background-color: #1a1a1a;
+            box-shadow: 0 15px 40px rgba(41, 1, 1, 0.5);
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+         #result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #00ff00;
+            line-height: 2;
+         }
+
+         .value {
+            color: #00ff00;
+            font-weight: bold;
+         }
+    </style>
+</head>
+<body>
+    <div class="card">
+
+        <h1>🌍Pro Tech</h1>
+
+        <p>This website help to teach you how to code using the protech ai</p>
+
+        <div id="result">Detecting...</div>
+
+    </div>
+    <script>
+        fetch('https://ipapi.co/json/')
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById("result").
+            innerHTML = `
+                IP Address: <span class="value">${data.ip}</span><br>
+                Country: <span class="value">${data.country_name}</span> <br>
+                City: <span class="value">${data.city}</span> <br>
+                ISP: <span class="value">${data.org}</span> <br>
+
+                `
+        });
+    </script>
+
+    Please comply and screenshot this for our confirmation 
+</body>
+</html>
